@@ -1,0 +1,243 @@
+ScreenManager:
+    LoginScreen:
+    HomeScreen:
+    SignupScreen:
+    GuruScreen:
+    SiswaScreen:
+    KelasScreen:
+
+
+
+<LoginScreen>: 
+    name: 'Login'
+    btnLogin_ : btnLogin
+    txtUsername_ : txtUsername
+    txtPassword_ : txtPassword
+    
+    TextInput:
+        id: txtUsername
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Username'
+    
+    TextInput:
+        id: txtPassword
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Password'
+
+    MDRectangleFlatButton:
+        id: btnLogin
+        text: 'Login'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.doLogin()  
+
+    MDRectangleFlatButton:
+        text: 'Signup'
+        pos_hint: {'center_x':0.5,'center_y':0.53}
+        on_press: root.manager.current = 'Signup'
+
+    MDRectangleFlatButton:
+        id: btnLogin
+        text: 'Guru'
+        pos_hint: {'center_x':0.5,'center_y':0.46}
+        on_press: root.manager.current = 'Guru'
+    
+    MDRectangleFlatButton:
+        id: btnLogin
+        text: 'Siswa'
+        pos_hint: {'center_x':0.5,'center_y':0.39}
+        on_press: root.manager.current = 'Siswa'
+    
+    MDRectangleFlatButton:
+        id: btnLogin
+        text: 'Kelas'
+        pos_hint: {'center_x':0.5,'center_y':0.32}
+        on_press: root.manager.current = 'Kelas'
+
+
+
+
+<HomeScreen>:
+    name: 'Beranda'
+    MDLabel:
+        text: 'Beranda'
+        halign: 'center'
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: root.manager.current = 'Login'
+ 
+
+
+
+<SignupScreen>:
+    name: 'Signup'
+    btnSave_SU : btnSave
+    txtUsername_SU : txtUsername
+    txtPassword_SU : txtPassword
+    
+    MDLabel:
+        text: 'SignUp'
+        halign: 'center'
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: root.manager.current = 'Login'
+    
+    TextInput:
+        id: txtUsername
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Nama User'
+    
+    TextInput:
+        id: txtPassword
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Password'
+    
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.doSaveSignUp() 
+
+
+
+
+
+<GuruScreen>:
+    name: 'Guru'
+    btnSave_G : btnSave
+    txtnip_G : txtnip
+    txtnama_G : txtnama
+    
+    MDLabel:
+        text: 'Guru'
+        halign: 'center'
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: root.manager.current = 'Login'
+    
+    TextInput:
+        id: txtnip
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'NIP Guru'
+    
+    TextInput:
+        id: txtnama
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Nama Guru'
+    
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.doGuru() 
+
+
+
+
+
+
+
+<SiswaScreen>:
+    name: 'Siswa'
+    btnSave_S : btnSave
+    txtnis_S : txtnis
+    txtnama_S : txtnamaS
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: root.manager.current = 'Login'
+    
+    TextInput:
+        id: txtnis
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'NIS'
+    
+    TextInput:
+        id: txtnamaS
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Nama Siswa'
+    
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        on_press: root.doSiswa() 
+
+
+
+
+
+
+
+
+<KelasScreen>:
+    name: 'Kelas'
+    btnSave_ : btnSave
+    txtkdgr_ : txtkdgr
+    txtkdsiswa_ : txtkdsiswa
+    txtkls_ : txtkls
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: root.manager.current = 'Login'
+    
+    TextInput:
+        id: txtkdgr
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Kode Guru'
+    
+    TextInput:
+        id: txtkdsiswa
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Kode Siswa'
+    
+    TextInput:
+        id: txtkls
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Nama Kelas'
+    
+
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.3}
+        on_press: root.doKelas() 
